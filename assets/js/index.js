@@ -42,13 +42,20 @@ const onScanSuccess = (decodedText, decodedResult) => {
 
   // Handle on success condition with the decoded text or result.
   console.log(`Scan result: ${decodedText}`, decodedResult);
-  document.querySelector('#result').innerText = decodedText;
   if (currentText !== decodedText) {
     currentText = decodedText;
     valoresDoQRCode.push(decodedText);
     console.log(valoresDoQRCode)
     beep(); 
+
   }
+
+  const soma = valoresDoQRCode.reduce((soma, i) => {
+    return Number(soma) + Number(i)
+  })
+
+  document.querySelector('#result').innerText = `Resultado: ${soma}`
+  
 
 }
 
