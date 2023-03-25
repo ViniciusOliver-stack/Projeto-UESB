@@ -10,8 +10,6 @@ body {
   align-items: center;
   gap: 3rem;
 
-  background-color: var(--bg);
-  color: var(--white-secondary);
 }
 
 #title{
@@ -22,9 +20,7 @@ h1{
   font-size: 2.8rem;
   margin-bottom: 1rem;
 }
-p{
-  color: var(--white) !important;
-}
+
 
 #reader{
   border: none !important;	
@@ -42,7 +38,6 @@ div:nth-child(2) > div:nth-child(1) {
 }
 
 #reader__dashboard_section_csr span{
-border: 1px solid red;
 width: 100%;
 
 display: flex !important;
@@ -55,11 +50,15 @@ margin-bottom: 2rem;
 font-size: 1.3rem;
 }
 
-#reader__dashboard_section_csr span select{
-  background: var(--white);
+#reader__dashboard_section_csr span select,
+button{
+  background: #111827;
+  color: var(--white-secondary);
   border: none;
-  padding: 1rem .5rem;
+  padding: 1rem 1.6rem;
   border-radius: 6px;
+
+  cursor: pointer;
 }
 
 #qr-shaded-region{
