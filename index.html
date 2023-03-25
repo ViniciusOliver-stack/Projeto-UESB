@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projeto UESB</title>
 
   <script src="./node_modules/html5-qrcode/html5-qrcode.min.js"></script>
+
   <link rel="stylesheet" href="./assets/css/styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <h1>Leia dois números com QR Code</h1>
+  <div id="title">
+    <h1>Scan Code</h1>
+    <p>Coloque o código dentro do quadro para escanear</p>
+  </div>
 
-  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
   <div style="width: 300px" id="reader"></div>
-  <button id="sound">Sound ON (iOS)</button>
-  <div id="result"></dib>
-  
+  <div id="result">
+    </dib>
 
-  <script src="./assets/js/index.js"></script>
+
+    <script src="./assets/js/index.js"></script>
 </body>
+
 </html>

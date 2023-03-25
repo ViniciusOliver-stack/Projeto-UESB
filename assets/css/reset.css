@@ -4,8 +4,15 @@
   box-sizing: border-box;
 
   font-size: 1.6rem;
+  font-family: 'Archivo', sans-serif;
 }
 
 :root{
   font-size: 62.5%;
+
+  --bg: #161513;
+  --bg-secondary: #1c1c22;
+
+  --white: rgba(240, 242, 245, .8);
+  --white-secondary: #f1f1f1;
 }

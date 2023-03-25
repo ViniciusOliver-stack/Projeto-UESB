@@ -63,3 +63,4 @@ AUDIO.autoplay = true;
 document.querySelector("#sound").addEventListener("click", () => {
   beep();
 });
+
