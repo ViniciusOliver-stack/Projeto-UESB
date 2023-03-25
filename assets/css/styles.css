@@ -41,6 +41,27 @@ div:nth-child(2) > div:nth-child(1) {
 #reader__dashboard {
 }
 
+#reader__dashboard_section_csr span{
+border: 1px solid red;
+width: 100%;
+
+display: flex !important;
+align-items: center;
+justify-content: center;
+gap: 2rem;
+
+margin-bottom: 2rem;
+
+font-size: 1.3rem;
+}
+
+#reader__dashboard_section_csr span select{
+  background: var(--white);
+  border: none;
+  padding: 1rem .5rem;
+  border-radius: 6px;
+}
+
 #qr-shaded-region{
 
 }
