@@ -32,6 +32,7 @@ const beep = () => {
   AUDIO.src = DATA_URL;
 }
 
+const btnClearValues = document.querySelector('.clearValues')
 
 let currentText = '';
 let valoresDoQRCode = []
@@ -55,9 +56,13 @@ const onScanSuccess = (decodedText, decodedResult) => {
   })
 
   document.querySelector('#result').innerText = `Resultado: ${soma}`
-  
 
 }
+
+btnClearValues.addEventListener('click', () => {
+  document.querySelector('#result').innerText = ''
+  return valoresDoQRCode = [] && document.location.reload(true)
+})
 
 const html5QrcodeScanner = new Html5QrcodeScanner(
 	"reader", { fps: 10, qrbox: 200 });
@@ -67,7 +72,5 @@ html5QrcodeScanner.render(onScanSuccess);
 // https://stackoverflow.com/questions/31776548/why-cant-javascript-play-audio-files-on-iphone-safari
 const AUDIO = new Audio();
 AUDIO.autoplay = true;
-document.querySelector("#sound").addEventListener("click", () => {
-  beep();
-});
+
 
