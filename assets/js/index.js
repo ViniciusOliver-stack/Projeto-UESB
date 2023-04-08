@@ -24,7 +24,9 @@ const onScanSuccess = (decodedText, decodedResult) => {
     return Number(soma) + Number(i)
   })
 
-  document.querySelector('#result').innerText = `Resultado: ${soma}`
+  let resultSoma = soma.toFixed(2)
+
+  document.querySelector('#result').innerText = `Resultado: ${resultSoma}`
 }
 
 btnClearValues.addEventListener('click', () => {
