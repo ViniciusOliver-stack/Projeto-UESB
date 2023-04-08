@@ -15,8 +15,7 @@ const onScanSuccess = (decodedText, decodedResult) => {
   // Handle on success condition with the decoded text or result.
   console.log(`Scan result: ${decodedText}`, decodedResult)
   if (resetCounter === decodedText) {
-    valoresDoQRCode = []
-    document.querySelector('#result').innerText = ''
+    document.location.reload(true)
     beep()
     return
   }
