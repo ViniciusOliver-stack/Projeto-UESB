@@ -8,11 +8,15 @@ const beep = () => {
 const btnClearValues = document.querySelector('.clearValues')
 
 let currentText = ''
+let resetCounter = 'zerar' || 'Zerar'
 let valoresDoQRCode = []
 
 const onScanSuccess = (decodedText, decodedResult) => {
   // Handle on success condition with the decoded text or result.
   console.log(`Scan result: ${decodedText}`, decodedResult)
+  if (resetCounter === decodedText) {
+    return document.location.reload(true)
+  }
   if (currentText !== decodedText) {
     currentText = decodedText
     valoresDoQRCode.push(decodedText)
