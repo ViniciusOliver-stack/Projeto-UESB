@@ -17,6 +17,7 @@ const onScanSuccess = (decodedText, decodedResult) => {
   if (resetCounter === decodedText) {
     valoresDoQRCode = []
     document.querySelector('#result').innerText = ''
+    beep()
     return
   }
   if (currentText !== decodedText) {
@@ -42,7 +43,7 @@ btnClearValues.addEventListener('click', () => {
 
 const html5QrcodeScanner = new Html5QrcodeScanner('reader', {
   fps: 10,
-  qrbox: 200
+  qrbox: 300
 })
 html5QrcodeScanner.render(onScanSuccess)
 
