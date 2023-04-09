@@ -11,6 +11,8 @@ let currentText = ''
 let resetCounter = 'zerar' || 'Zerar'
 let valoresDoQRCode = []
 
+const valueList = document.querySelector('#valueList')
+
 const onScanSuccess = (decodedText, decodedResult) => {
   // Handle on success condition with the decoded text or result.
   console.log(`Scan result: ${decodedText}`, decodedResult)
@@ -19,9 +21,11 @@ const onScanSuccess = (decodedText, decodedResult) => {
     beep()
     return
   }
+
   if (currentText !== decodedText) {
     currentText = decodedText
     valoresDoQRCode.push(decodedText)
+    updateValuesList()
     console.log(valoresDoQRCode)
     beep()
   }
@@ -32,7 +36,20 @@ const onScanSuccess = (decodedText, decodedResult) => {
 
   let resultSoma = soma.toFixed(2)
 
-  document.querySelector('#result').innerText = `Resultado: ${resultSoma}`
+  document.querySelector('.title-result').innerText = `Resultado: ${resultSoma}`
+}
+
+function updateValuesList() {
+  valueList.innerHTML = ''
+
+  valoresDoQRCode.forEach(value => {
+    const listItem = document.createElement('li')
+    const textNode = document.createTextNode(value)
+    textNode.textContent = 'R$ ' + value
+
+    listItem.appendChild(textNode)
+    valueList.appendChild(listItem)
+  })
 }
 
 btnClearValues.addEventListener('click', () => {
@@ -42,7 +59,7 @@ btnClearValues.addEventListener('click', () => {
 
 const html5QrcodeScanner = new Html5QrcodeScanner('reader', {
   fps: 10,
-  qrbox: 300
+  qrbox: 250
 })
 html5QrcodeScanner.render(onScanSuccess)
 
